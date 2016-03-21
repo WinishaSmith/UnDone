@@ -33,8 +33,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
-    redirect_to notes_path
+    if @task.destroy
+      redirect_to "/"
+    end
   end
 
   private
@@ -42,6 +43,7 @@ class TasksController < ApplicationController
   def find_task
     @task = Task.find(params[:id])
   end
+
   def task_params
     params.require(:task).permit(:title, :content)
   end
