@@ -38,6 +38,11 @@ class TasksController < ApplicationController
     end
   end
 
+  # def complete
+  #   @task = @task.find(params[:id])
+  #   @task.update_attribute
+  # end
+
   private
 
   def find_task
