@@ -38,10 +38,12 @@ class TasksController < ApplicationController
     end
   end
 
-  # def complete
-  #   @task = @task.find(params[:id])
-  #   @task.update_attribute
-  # end
+  def complete
+    @task = Task.find(params[:id])
+    @task.update_attribute(:completed_at, Time.now)
+    flash[:notice] = "Task marked as complete"
+    redirect_to tasks_path
+  end
 
   private
 
