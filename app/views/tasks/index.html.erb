@@ -1,1 +1,9 @@
 <h1> Task List </h1>
+
+<% @tasks.each do |task| %>
+<div class="task_wrapper">
+  <h2 class="title"><%= task.title %></h2>
+  <p class="content"><%= task.content %></p>
+  <p class="date">Created: <%= task.created_at.strftime("%A, %B %d, %Y")%></p>
+</div>
+<% end %>
