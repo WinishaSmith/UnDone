@@ -1,5 +1,17 @@
 <%= form_for @task do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
+
+<p>
+  <%= f.label :title %> <br>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :content %> <br>
+  <%= f.text_area :content %>
+</p>
+
+<p>
   <%= f.button :submit %>
+</p>
+
 <% end %>
