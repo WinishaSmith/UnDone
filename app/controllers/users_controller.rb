@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
+  # before_action: :set_current_user
   def index
     @users = User.all
   end
 
   def new
     @user = User.new
+  end
+
+  def set_current_user
+    # @user = @current_user
   end
 
   def create
