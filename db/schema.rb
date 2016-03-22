@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 20160322033643) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.datetime "completed_at"
+    t.integer  "user_id"
   end
+
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "username"
