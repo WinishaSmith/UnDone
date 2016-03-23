@@ -31,7 +31,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to @task
+      redirect_to user_task_url
     else
       render 'edit'
     end
@@ -39,7 +39,7 @@ class TasksController < ApplicationController
 
   def destroy
     if @task.destroy
-      redirect_to "/"
+      redirect_to user_tasks_url
     end
   end
 
@@ -47,7 +47,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update_attribute(:completed_at, Time.now)
     flash[:notice] = "Task marked as complete"
-    redirect_to tasks_path
+    redirect_to user_tasks_url
   end
 
   private
