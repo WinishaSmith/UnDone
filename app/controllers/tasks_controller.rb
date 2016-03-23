@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   def index
-    @tasks = Task.all
+    @user = User.find(params[:user_id])
+    @tasks = @user.tasks
   end
 
   def new
@@ -24,6 +25,8 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    @task = @user.tasks.find(params[:id])
   end
 
   def update
