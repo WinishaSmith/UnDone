@@ -3,7 +3,10 @@
 <% @tasks.each do |task| %>
 <div class="task_wrapper">
   <h2 class="title"><%= link_to task.title, user_task_path(@user, task) %></h2>
-  <p class="date">Created: <%= task.created_at.strftime("%A, %B %d, %Y")%></p>
+  <p class="date">Created: <%= time_ago_in_words(task.created_at)%> ago</p>
+  <% if task.completed_at %>
+    <p class="date">Completed: <%= time_ago_in_words(task.completed_at)%> ago</p>
+  <% end %>
 </div>
 <% end %>
 
