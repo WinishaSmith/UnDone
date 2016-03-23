@@ -2,7 +2,7 @@
 
 <% @tasks.each do |task| %>
 <div class="task_wrapper">
-  <h2 class="title"><%= link_to task.title, user_task_path(@user, @tasks) %></h2>
+  <h2 class="title"><%= link_to task.title, user_task_path(@user, task) %></h2>
   <p class="date">Created: <%= task.created_at.strftime("%A, %B %d, %Y")%></p>
 </div>
 <% end %>
