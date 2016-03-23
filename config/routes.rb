@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root "welcome#index"
   resource :session
 
-  resources :users do
+   resources :users do
     resources :tasks do
       member do
         get :complete
       end
     end
-  end
-  
+   end
+
 end

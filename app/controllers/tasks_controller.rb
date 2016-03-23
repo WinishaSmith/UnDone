@@ -5,14 +5,16 @@ class TasksController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @task = Task.new
   end
 
   def create
-    @task = Task.new(task_params)
+    @user = User.find(params[:user_id])
+    @task = @user.tasks.create(task_params)
 
     if @task.save
-      redirect_to @task
+      redirect_to user_tasks_path(@user)
     else
       render 'new'
     end
