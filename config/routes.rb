@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "tasks#index"
   resources :users do
     resources :tasks do
       member do
@@ -7,4 +6,6 @@ Rails.application.routes.draw do
       end
     end
   end
+  root "tasks#index"
+  resources :session
 end
