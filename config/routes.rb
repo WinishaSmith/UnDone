@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  root "welcome#index"
+  resource :session
+
   resources :users do
     resources :tasks do
       member do
@@ -6,6 +10,5 @@ Rails.application.routes.draw do
       end
     end
   end
-  root "tasks#index"
-  resource :session
+  
 end
