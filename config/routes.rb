@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     end
   end
   root "tasks#index"
-  resources :session
+  resource :session
 end
