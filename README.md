@@ -1,5 +1,3 @@
-== README
-
 # UnDone App
 
 # Technologies used:
@@ -12,7 +10,7 @@
 
 
 # Approach Taken:
-Bronze
+# Bronze
 * Created a task with a description
 * Tasks will display on the index page in ascending order
 * Created the ability to edit, delete and mark complete (made with "link_to" helper)
