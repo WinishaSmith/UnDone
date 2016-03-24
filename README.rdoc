@@ -1,28 +1,43 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+T# UnDone App
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Technologies used:
+* Atom
+* Ruby on Rails
+* Bootstrap (Bootstap-Sass Gem)
+* Simple Form Gem
+* PostgreSQL
+* Font Awesome (for icons)
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# Approach Taken:
+Bronze
+* Created a task with a description
+* Tasks will display on the index page in ascending order
+* Created the ability to edit, delete and mark complete (made with "link_to" helper)
+
+Silver
+* Created user model with sign up and sign in functionality
+* Users can only see their tasks
+* Added navigation bar with logo and links
+* Added icons for edit, complete, and delete
+* Added 'back' and 'cancel' features for edit task and show task
+
+
+Gold (Future Additions)
+* Add due-date functionality (should alert user if task is overdue)
+* Redesign Welcome page to include photo
+
+
+# Unsolved Problems:
+* Users who sign up aren't identified as being signed-in so they must sign up and then sign in
+
+# User Stories:
+* Users should be presented with a home screen where they'll have the ability to sign in or sign up
+* Once signed in, users should be taken to their desktop
+* Users should be able to create a new list and give it a name
+* Users should be able to add their tasks to the list
+* Users should have the ability to edit/update their existing tasks
+* Users should have the ability to mark a task as complete
+* Users should be able to delete tasks they no longer need
