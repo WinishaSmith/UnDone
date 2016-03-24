@@ -1,11 +1,39 @@
 <h1> Task List </h1>
 
-<% @tasks.each do |task| %>
-<div class="task_wrapper">
-  <h2 class="title"><%= link_to task.title, user_task_path(@user, task) %></h2>
-  <p class="date">Created: <%= time_ago_in_words(task.created_at)%> ago</p>
-  <% if task.completed_at %>
-    <p class="date">Completed: <%= time_ago_in_words(task.completed_at)%> ago</p>
+<% if @current_user %>
+  <% @tasks.each do |task| %>
+
+    <% if task.completed? %>
+
+      <div class="task_wrapper">
+        <h2 style="opacity: 0.5;"><strike><%= link_to task.title, user_task_path(@user, task) %></strike></h2>
+        <p "opacity: 0.5;">Completed: <%= time_ago_in_words(task.completed_at)%> ago</p>
+        <%= link_to 'Edit', edit_user_task_path(@user, task) %> |
+        <p><%= link_to complete_user_task_path(@user, task), method: :patch do %></p>
+          <i class="fa fa-lg fa-check"></i>
+          <% end %>
+        <p><%= link_to user_task_path(@user, task), method: :delete, data: {confirm: "Are you sure?"} do %></p>
+          <i class="fa fa-lg fa-trash"></i>
+        <% end %>
+      </div>
+
+    <% else %>
+
+    <div class="task_wrapper">
+      <h2><%= link_to task.title, user_task_path(@user, task) %></strike></h2>
+      <p>Created: <%= time_ago_in_words(task.created_at)%> ago</p>
+      <%= link_to 'Edit', edit_user_task_path(@user, task) %> |
+      <p><%= link_to complete_user_task_path(@user, task), method: :patch do %></p>
+        <i class="fa fa-lg fa-check"></i>
+        <% end %>
+      <p><%= link_to user_task_path(@user, task), method: :delete, data: {confirm: "Are you sure?"} do %></p>
+        <i class="fa fa-lg fa-trash"></i>
+      <% end %>
+    </div>
+
+
+
+
+    <% end %>
   <% end %>
-</div>
 <% end %>

@@ -46,7 +46,6 @@ class TasksController < ApplicationController
   def complete
     @task = Task.find(params[:id])
     @task.update_attribute(:completed_at, Time.now)
-    flash[:notice] = "Task marked as complete"
     redirect_to user_tasks_url
   end
 
