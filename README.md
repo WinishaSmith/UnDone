@@ -26,6 +26,7 @@
 # Gold (Future Additions)
 * Add due-date functionality (should alert user if task is overdue)
 * Redesign Welcome page to include photo
+* Incorporate Devise gem for user authentication
 
 
 # Unsolved Problems:
