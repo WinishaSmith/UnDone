@@ -1,6 +1,6 @@
 == README
 
-T# UnDone App
+# UnDone App
 
 # Technologies used:
 * Atom
@@ -17,7 +17,7 @@ Bronze
 * Tasks will display on the index page in ascending order
 * Created the ability to edit, delete and mark complete (made with "link_to" helper)
 
-Silver
+# Silver
 * Created user model with sign up and sign in functionality
 * Users can only see their tasks
 * Added navigation bar with logo and links
@@ -25,7 +25,7 @@ Silver
 * Added 'back' and 'cancel' features for edit task and show task
 
 
-Gold (Future Additions)
+# Gold (Future Additions)
 * Add due-date functionality (should alert user if task is overdue)
 * Redesign Welcome page to include photo
 
