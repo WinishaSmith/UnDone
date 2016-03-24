@@ -1,7 +1,4 @@
 <h1> <%= @task.title %> </h1>
 <p> <%= @task.content %> </p>
 
-<%= link_to 'All My Tasks', user_tasks_path %> |
-<%= link_to 'Edit', edit_user_task_path %> |
-<%= link_to 'Delete', user_task_path, method: :delete, data: {confirm: "Are you sure?"} %> |
-<%= link_to 'Mark Complete', complete_user_task_path, method: :get %>
+<%= link_to '<<Back', user_tasks_path %>
