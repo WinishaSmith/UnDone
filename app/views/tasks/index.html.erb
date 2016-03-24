@@ -8,7 +8,9 @@
       <div class="task_wrapper">
         <h2 style="opacity: 0.5;"><strike><%= link_to task.title, user_task_path(@user, task) %></strike></h2>
         <p "opacity: 0.5;">Completed: <%= time_ago_in_words(task.completed_at)%> ago</p>
-        <%= link_to 'Edit', edit_user_task_path(@user, task) %> |
+        <p><%= link_to edit_user_task_path(@user, task) do %></p>
+          <i class="fa fa-lg fa-edit"></i>
+          <% end %>
         <p><%= link_to complete_user_task_path(@user, task), method: :patch do %></p>
           <i class="fa fa-lg fa-check"></i>
           <% end %>
@@ -22,7 +24,9 @@
     <div class="task_wrapper">
       <h2><%= link_to task.title, user_task_path(@user, task) %></strike></h2>
       <p>Created: <%= time_ago_in_words(task.created_at)%> ago</p>
-      <%= link_to 'Edit', edit_user_task_path(@user, task) %> |
+      <p><%= link_to edit_user_task_path(@user, task) do %></p>
+        <i class="fa fa-lg fa-edit"></i>
+        <% end %>
       <p><%= link_to complete_user_task_path(@user, task), method: :patch do %></p>
         <i class="fa fa-lg fa-check"></i>
         <% end %>
