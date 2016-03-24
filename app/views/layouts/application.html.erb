@@ -14,23 +14,24 @@
 
 </head>
 <body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
+  <nav class="navbar navbar-default">
     <div class="container">
-      <%= link_to "UnDone", '#', id: "logo" %>
-      <nav>
+      <div class="navbar-header">
+      <%= link_to "UnDone", root_path, class: "navbar-brand" %>
+      </div>
         <ul class=" nav nav-pills  navbar-right">
           <% if @current_user %>
           <li> <%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %></li>
-          <li> <%= link_to "Create New Task", new_user_task_path(@current_user) %>
+          <li> <%= link_to "Create New Task", new_user_task_path(@current_user) %></li>
           <li>  <%= link_to "Sign Out", session_path, method: :delete %></li>
           <% else %>
           <li>  <%= link_to "Sign Up", new_user_path %></li>
           <li>  <%= link_to "Sign In", new_session_path %></li>
           <% end %>
         </ul>
+        </div>
       </nav>
-    </div>
-  </header>
+
 
   <div class="container">
     <%= yield %>
