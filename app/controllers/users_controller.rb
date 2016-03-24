@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     @current_user = @user
-    redirect_to user_tasks_path(@user)
+    redirect_to root_path
   end
 
   def show
