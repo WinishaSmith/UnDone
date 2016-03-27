@@ -3,4 +3,5 @@ class Task < ActiveRecord::Base
   def completed?
     !completed_at.blank?
   end
+  # Woo! First model method I've seen.
 end
