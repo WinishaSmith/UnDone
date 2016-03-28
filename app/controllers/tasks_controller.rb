@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  # Nice use of before_action
   def index
     @user = User.find(params[:user_id])
     @tasks = @user.tasks
