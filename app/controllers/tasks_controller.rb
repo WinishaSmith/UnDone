@@ -32,7 +32,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to user_task_url
+      redirect_to user_tasks_url
     else
       render 'edit'
     end
