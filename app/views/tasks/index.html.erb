@@ -1,6 +1,6 @@
 <h1> My Tasks </h1>
 
-<% if @current_user %>
+<% if current_user %>
   <% @tasks.each do |task| %>
 
   <% if task.completed? %>
