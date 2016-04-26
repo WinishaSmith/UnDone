@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
       @current_user = nil
     end
   end
+
+  def after_sign_in_path_for(user)
+    flash[:notice] = "Welcome! Let's get 'er done!'"
+    user_tasks_path(user)
+  end
 end
