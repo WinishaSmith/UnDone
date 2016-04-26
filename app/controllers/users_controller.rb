@@ -8,10 +8,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def set_current_user
-    # @user = @current_user
-  end
-
   def create
     @user = User.create(user_params)
     @current_user = @user
@@ -34,7 +30,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :email)
   end
 
 end

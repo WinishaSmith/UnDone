@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :tasks do
       member do
         patch :complete
-        # Nice!
       end
     end
    end
