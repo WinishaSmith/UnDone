@@ -23,8 +23,8 @@
       </div>
       <ul class=" nav nav-pills navbar-right">
         <% if current_user %>
-        <li> <%= link_to "Create New Task", new_user_task_path(current_user) %></li>
-        <li> <%= link_to 'My Tasks', user_tasks_path(current_user) %></li>
+        <li> <%= link_to "Create New Task", new_task_list_path(current_user) %></li>
+        <li> <%= link_to 'My Tasks', user_task_lists_path(current_user) %></li>
         <li>  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
         <li>  <%= link_to "Sign Up", new_user_registration_path %></li>
