@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root "welcome#index"
 
-   resources :users do
-    resources :tasks do
-      member do
-        patch :complete
-      end
-    end
-   end
+  resources :users do
+    resources :task_lists, only: [:create, :index]
+  end
+
+  resources :task_lists, except: [:create, :index] do
+    resources :tasks, only: [:create]
+  end
 
 end
