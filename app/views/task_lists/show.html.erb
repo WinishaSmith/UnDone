@@ -1,5 +1,6 @@
 <div class="col-lg-6 col-lg-offset-3">
   <h1> <%= @task_list.title %> </h1>
   <p> <%= @task_list.description %> </p>
-  <%= link_to '<<Back', user_task_lists_path %>
+  <%= link_to '<<Back', user_task_lists_path %>  |
+  <%= link_to 'Edit', edit_user_task_list_path %>
 </div>
