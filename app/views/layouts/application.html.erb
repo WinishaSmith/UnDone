@@ -16,12 +16,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar-default">
     <div class="container">
       <div class="navbar-header">
         <%= link_to "UnDone", root_path, class: "navbar-brand" %>
       </div>
-      <ul class=" nav nav-pills  navbar-right">
+      <ul class=" nav nav-pills navbar-right">
         <% if current_user %>
         <li> <%= link_to "Create New Task", new_user_task_path(current_user) %></li>
         <li> <%= link_to 'My Tasks', user_tasks_path(current_user) %></li>
@@ -34,10 +34,7 @@
     </div>
   </nav>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-      <%= yield %>
+  <%= yield %>
 
   <!-- JQuery from google.com -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
