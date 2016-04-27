@@ -23,7 +23,7 @@
       </div>
       <ul class=" nav nav-pills navbar-right">
         <% if current_user %>
-        <li> <%= link_to "Create New List", new_task_list_path %></li>
+        <li> <%= link_to "Create New List", new_user_task_list_path(current_user) %></li>
         <li> <%= link_to 'My Lists', user_task_lists_path(current_user) %></li>
         <li>  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
@@ -36,11 +36,5 @@
 
   <%= yield %>
 
-  <!-- JQuery from google.com -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- I don't think you needed these guys in here. -->
 </body>
 </html>
