@@ -12,13 +12,8 @@ class TasksController < ApplicationController
   end
 
   def create
-  		@task = @task_list.tasks.create(task_params)
-  		redirect_to @task_list
-    # if @task.save
-    #   redirect_to user_tasks_path(@user)
-    # else
-    #   render 'new'
-    # end
+  	@task = @task_list.tasks.create(task_params)
+    redirect_to user_task_list_url(@user, @task_list)
   end
 
   def show
@@ -52,7 +47,8 @@ class TasksController < ApplicationController
   private
 
   def set_task_list
-    @task_list = TaskList.find(params[:id])
+    @user = User.find(params[:user_id])
+    @task_list = TaskList.find(params[:task_list_id])
   end
 
   def task_params

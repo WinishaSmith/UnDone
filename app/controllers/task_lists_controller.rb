@@ -21,9 +21,9 @@ class TaskListsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @task_list = TaskList.find(params[:id])
-    @task = @task_list.tasks.build(task_params)
-    redirect_to @task_list
+    @task = @task_list.tasks.build
   end
 
   def edit
