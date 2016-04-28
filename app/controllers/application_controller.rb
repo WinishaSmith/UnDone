@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       @current_user = nil
     end
   end
+
+  def after_sign_in_path_for(current_user)
+    user_task_lists_path(current_user)
+  end
 end
