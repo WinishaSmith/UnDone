@@ -22,6 +22,8 @@ class TaskListsController < ApplicationController
 
   def show
     @task_list = TaskList.find(params[:id])
+    @task = @task_list.tasks.build(task_params)
+    redirect_to @task_list
   end
 
   def edit
@@ -47,6 +49,10 @@ class TaskListsController < ApplicationController
 
   def task_list_params
     params.require(:task_list).permit(:title, :description)
+  end
+
+  def task_params
+    params.require(:task).permit(:content)
   end
 
 end
