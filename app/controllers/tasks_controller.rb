@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:show, :edit, :update, :destroy]
-  # Nice use of before_action
+  before_action :set_task_list
+
   def index
     @user = User.find(params[:user_id])
     @tasks = @user.tasks
@@ -12,14 +12,13 @@ class TasksController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @task = @user.tasks.create(task_params)
-
-    if @task.save
-      redirect_to user_tasks_path(@user)
-    else
-      render 'new'
-    end
+  		@task = @task_list.tasks.create(task_params)
+  		redirect_to @task_list
+    # if @task.save
+    #   redirect_to user_tasks_path(@user)
+    # else
+    #   render 'new'
+    # end
   end
 
   def show
@@ -52,12 +51,12 @@ class TasksController < ApplicationController
 
   private
 
-  def find_task
-    @task = Task.find(params[:id])
+  def set_task_list
+    @task_list = TaskList.find(params[:id])
   end
 
   def task_params
-    params.require(:task).permit(:title, :content)
+    params.require(:task).permit(:content)
   end
 
 end

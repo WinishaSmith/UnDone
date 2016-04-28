@@ -1,12 +1,4 @@
-<%= simple_form_for [@user, @task] do |f| %>
-
-<p>
-  <%= f.input :title, label: 'Title' %> <br>
-  <%= f.input :content, label: 'Description' %>
-</p>
-
-<p>
+<%= simple_form_for [@user, @task_list, @task_list.tasks.build] do |f| %>
+  <%= f.text_field :content, placeholder: 'New Task' %>
   <%= f.button :submit %>
-</p>
-
 <% end %>
