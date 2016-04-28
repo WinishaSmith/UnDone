@@ -1,0 +1,12 @@
+<%= simple_form_for [@user, @task_list] do |f| %>
+
+<p>
+  <%= f.input :title, label: 'Title' %> <br>
+  <%= f.input :description, label: 'Description' %>
+</p>
+
+<p>
+  <%= f.button :submit %>
+</p>
+
+<% end %>

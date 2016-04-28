@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :users do
-    resources :task_lists, only: [:create, :index]
-  end
-
-  resources :task_lists, except: [:create, :index] do
-    resources :tasks, only: [:create]
+    resources :task_lists do
+      resources :tasks
+    end
   end
 
 end
