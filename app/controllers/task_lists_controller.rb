@@ -35,7 +35,7 @@ class TaskListsController < ApplicationController
     @task_list = TaskList.find(params[:id])
 
     if @task_list.update(task_list_params)
-      redirect_to user_task_lists_url
+      redirect_to user_task_list_url
     else
       render 'edit'
     end
