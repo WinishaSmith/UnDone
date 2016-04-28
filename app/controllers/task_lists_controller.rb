@@ -21,7 +21,9 @@ class TaskListsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @task_list = TaskList.find(params[:id])
+    @task = @task_list.tasks.build
   end
 
   def edit
@@ -47,6 +49,10 @@ class TaskListsController < ApplicationController
 
   def task_list_params
     params.require(:task_list).permit(:title, :description)
+  end
+
+  def task_params
+    params.require(:task).permit(:content)
   end
 
 end
