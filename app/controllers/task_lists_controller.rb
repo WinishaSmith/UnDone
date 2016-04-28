@@ -14,7 +14,7 @@ class TaskListsController < ApplicationController
     @task_list = @user.task_lists.create!(task_list_params)
 
     if @task_list.save
-      redirect_to user_task_lists_path(@user)
+      redirect_to user_task_list_path(@user, @task_list)
     else
       render 'new'
     end
