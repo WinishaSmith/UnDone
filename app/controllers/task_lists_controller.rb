@@ -16,7 +16,7 @@ class TaskListsController < ApplicationController
     @task_list = @user.task_lists.create!(task_list_params)
 
     if @task_list.save
-      redirect_to user_task_list_path(@user, @task_list), notice: 'Tasklist was successfully created.'
+      redirect_to user_task_list_path(@user, @task_list), notice: 'Tasklist successfully created.'
     else
       render 'new'
     end
@@ -34,7 +34,7 @@ class TaskListsController < ApplicationController
 
   def update
     if @task_list.update(task_list_params)
-      redirect_to user_task_list_url, notice: 'Tasklist was successfully updated.'
+      redirect_to user_task_list_url, notice: 'Tasklist successfully updated.'
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class TaskListsController < ApplicationController
 
   def destroy
     @task_list.destroy
-    redirect_to user_task_lists_path, notice: 'Tasklist was successfully deleted.'
+    redirect_to user_task_lists_path, notice: 'Tasklist successfully deleted.'
   end
 
   private

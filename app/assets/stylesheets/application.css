@@ -9,3 +9,11 @@
 .banner-content{
   text-align: center;
 }
+
+#notice {
+  margin-top: 30px;
+	text-align: center;
+	font-size: 1em;
+	font-weight:200;
+  color:blue;
+}
