@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :task_lists do
-      resources :tasks
+      resources :tasks do
+        member do
+          patch :complete
+        end
+      end
     end
   end
 

@@ -1,2 +1,3 @@
 <p><%= task.content %></p>
-<%= link_to "Delete", user_task_list_task_path(@user, @task_list, task.id), method: :delete, data: { confirm: "are you sure?" } %>
+<%= link_to "Delete", user_task_list_task_path(@user, @task_list, task.id), method: :delete, data: { confirm: "are you sure?" } %> |
+<%= link_to "Mark as complete", complete_user_task_list_task_path(@user, @task_list, task.id), method: :patch %>

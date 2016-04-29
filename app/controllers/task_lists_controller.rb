@@ -1,5 +1,5 @@
 class TaskListsController < ApplicationController
-  before_action :set_task_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_task_list, only: [:show, :edit, :update, :destroy, :complete]
 
   def index
     @user = User.find(params[:user_id])

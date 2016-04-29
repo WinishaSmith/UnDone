@@ -35,15 +35,14 @@ class TasksController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @task = @task_list.tasks.find(params[:id])
-    if @task.destroy
-    end
-    redirect_to user_task_list_url(@user, @task_list)
+    @task.destroy
+    redirect_to user_task_list_url(@user, @task_list), notice: 'Task was successfully deleted.'
   end
 
   def complete
     @task = Task.find(params[:id])
     @task.update_attribute(:completed_at, Time.now)
-    redirect_to user_tasks_url
+    redirect_to user_task_list_url
   end
 
   private
