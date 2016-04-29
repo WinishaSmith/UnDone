@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-  	@task = @task_list.tasks.create(task_params)
+    @task = @task_list.tasks.create(task_params)
     redirect_to user_task_list_url(@user, @task_list)
   end
 
@@ -33,9 +33,11 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:user_id])
+    @task = @task_list.tasks.find(params[:id])
     if @task.destroy
-      redirect_to user_tasks_url
     end
+    redirect_to user_task_list_url(@user, @task_list)
   end
 
   def complete

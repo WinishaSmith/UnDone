@@ -23,7 +23,7 @@ class TaskListsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @task_list = TaskList.find(params[:id])
-    @task = @task_list.tasks.build
+    @task = Task.new
   end
 
   def edit
