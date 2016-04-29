@@ -1,4 +1,6 @@
 class TaskListsController < ApplicationController
+  before_action :set_task_list, only: [:show, :edit, :update, :destroy]
+
   def index
     @user = User.find(params[:user_id])
     @task_lists = @user.task_lists
@@ -22,7 +24,6 @@ class TaskListsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @task_list = TaskList.find(params[:id])
     @task = Task.new
   end
 
@@ -32,8 +33,6 @@ class TaskListsController < ApplicationController
   end
 
   def update
-    @task_list = TaskList.find(params[:id])
-
     if @task_list.update(task_list_params)
       redirect_to user_task_list_url, notice: 'Tasklist was successfully updated.'
     else
@@ -41,9 +40,14 @@ class TaskListsController < ApplicationController
     end
   end
 
+  def destroy
+    @task_list.destroy
+    redirect_to user_task_lists_path, notice: 'Tasklist was successfully deleted.'
+  end
+
   private
 
-  def find_task_list
+  def set_task_list
     @task_list = TaskList.find(params[:id])
   end
 
