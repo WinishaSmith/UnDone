@@ -14,7 +14,7 @@ class TaskListsController < ApplicationController
     @task_list = @user.task_lists.create!(task_list_params)
 
     if @task_list.save
-      redirect_to user_task_list_path(@user, @task_list)
+      redirect_to user_task_list_path(@user, @task_list), notice: 'Tasklist was successfully created.'
     else
       render 'new'
     end
@@ -35,7 +35,7 @@ class TaskListsController < ApplicationController
     @task_list = TaskList.find(params[:id])
 
     if @task_list.update(task_list_params)
-      redirect_to user_task_list_url
+      redirect_to user_task_list_url, notice: 'Tasklist was successfully updated.'
     else
       render 'edit'
     end
@@ -49,10 +49,6 @@ class TaskListsController < ApplicationController
 
   def task_list_params
     params.require(:task_list).permit(:title, :description)
-  end
-
-  def task_params
-    params.require(:task).permit(:content)
   end
 
 end
