@@ -43,7 +43,7 @@ class TasksController < ApplicationController
     @user = User.find(params[:user_id])
     @task = @task_list.tasks.find(params[:id])
     @task.update_attribute(:completed_at, Time.now)
-    redirect_to user_task_list_url(@user, @task_list), notice: 'Task has been completed.'
+    redirect_to user_task_list_url(@user, @task_list), notice: 'Task completed.'
   end
 
   private

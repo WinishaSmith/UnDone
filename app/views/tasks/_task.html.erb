@@ -1,5 +1,31 @@
-
-
-<p><%= task.content %></p>
-<%= link_to "Delete", user_task_list_task_path(@user, @task_list, task.id), method: :delete, data: { confirm: "are you sure?" } %> |
-<%= link_to "Mark as complete", complete_user_task_list_task_path(@user, @task_list, task.id), method: :patch %>
+<div class="row clearfix">
+  <% if task.completed? %>
+  <div class="completed">
+    <%= link_to complete_user_task_list_task_path(@user, @task_list, task.id), method: :patch do %>
+    <i style="opacity: 0.4;" class="fa fa-check"></i>
+    <% end %>
+  </div>
+  <div class="task">
+    <p style="opacity: 0.4;"><strike><%= task.content %></strike></p>
+  </div>
+  <div class="delete">
+    <%= link_to user_task_list_task_path(@user, @task_list, task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fa fa-trash"></i>
+    <% end %>
+  </div>
+  <% else %>
+  <div class="completed">
+    <%= link_to complete_user_task_list_task_path(@user, @task_list, task.id), method: :patch do %>
+    <i class="fa fa-check"></i>
+    <% end %>
+  </div>
+  <div class="task">
+    <p><%= task.content %></p>
+  </div>
+  <div class="delete">
+    <%= link_to user_task_list_task_path(@user, @task_list, task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fa fa-trash"></i>
+    <% end %>
+  </div>
+  <% end %>
+</div>
