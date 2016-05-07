@@ -103,7 +103,7 @@
 			padding: 1em 0;
 		}
 		.task {
-			width: 80%;
+			width: 70%;
 			float: left;
 			p {
 				margin: 0;
@@ -116,7 +116,7 @@
 			width: 10%;
 			float: left;
 			text-align: center;
-			border-left: 1px solid rgba(250,250,250, .9);
+			border-left: 1px solid rgba(200,200,200, .4);
 			padding: 1em 0;
 		}
 		i {
@@ -126,4 +126,17 @@
 			}
 		}
 	}
+}
+
+.glyphicon{
+  font-size: 2em;
+}
+
+.col-md-4{
+  text-align: center;
+  padding: 25px;
+}
+
+.app-info{
+  margin: 50px;
 }
