@@ -1,3 +1,9 @@
+// Welcome page styling
+
+.navbar-custom{
+color: blue; 
+}
+
 .banner{
   background-image: url("desktop.jpg");
   opacity: 2;
@@ -23,6 +29,22 @@
   font-size: 2em;
 }
 
+.glyphicon{
+  font-size: 35px;
+  color: #005987;
+}
+
+.col-md-4{
+  text-align: center;
+  padding: 25px;
+}
+
+.app-info{
+  margin: 50px;
+}
+
+// End of welcome page styling
+
 #notice {
   margin-top: 30px;
 	text-align: center;
@@ -34,7 +56,7 @@
 .body-container {
 	width: 50%;
 	max-width: 750px;
-  background: rgba(16, 92, 143, .7);
+  background: rgba(9,69,122,1);
 	margin: 3em auto 0 auto;
 	border-radius: 7px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
@@ -120,23 +142,10 @@
 			padding: 1em 0;
 		}
 		i {
-			color: rgb(16, 92, 143);
+			color: rgb(9,69,122);
 			&:hover {
 				color: gray;
 			}
 		}
 	}
-}
-
-.glyphicon{
-  font-size: 2em;
-}
-
-.col-md-4{
-  text-align: center;
-  padding: 25px;
-}
-
-.app-info{
-  margin: 50px;
 }
