@@ -40,6 +40,7 @@ class TaskListsController < ApplicationController
     end
   end
 
+# need to fix this, unable to delete list
   def destroy
     @task_list.destroy
     redirect_to user_task_lists_path, notice: 'Tasklist successfully deleted.'
