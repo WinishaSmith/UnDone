@@ -1,4 +1,6 @@
 class TaskListsController < ApplicationController
+  before_action :set_task_list, only: [:show, :edit, :update, :destroy, :complete]
+
   def index
     @user = User.find(params[:user_id])
     @task_lists = @user.task_lists
@@ -14,7 +16,7 @@ class TaskListsController < ApplicationController
     @task_list = @user.task_lists.create!(task_list_params)
 
     if @task_list.save
-      redirect_to user_task_lists_path(@user)
+      redirect_to user_task_list_path(@user, @task_list), notice: 'Tasklist successfully created.'
     else
       render 'new'
     end
@@ -22,8 +24,7 @@ class TaskListsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @task_list = TaskList.find(params[:id])
-    @task = @task_list.tasks.build
+    @task = Task.new
   end
 
   def edit
@@ -32,27 +33,26 @@ class TaskListsController < ApplicationController
   end
 
   def update
-    @task_list = TaskList.find(params[:id])
-
     if @task_list.update(task_list_params)
-      redirect_to user_task_lists_url
+      redirect_to user_task_list_url, notice: 'Tasklist successfully updated.'
     else
       render 'edit'
     end
   end
 
+  def destroy
+    @task_list.destroy
+    redirect_to user_task_lists_path, notice: 'Tasklist successfully deleted.'
+  end
+
   private
 
-  def find_task_list
+  def set_task_list
     @task_list = TaskList.find(params[:id])
   end
 
   def task_list_params
     params.require(:task_list).permit(:title, :description)
-  end
-
-  def task_params
-    params.require(:task).permit(:content)
   end
 
 end

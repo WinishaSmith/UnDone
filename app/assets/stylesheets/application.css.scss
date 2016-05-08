@@ -1,0 +1,150 @@
+// Welcome page styling
+.banner{
+  background-image: url("workstation.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: table;
+  width: 100%;
+  min-height: 400px;
+}
+
+.banner-content{
+  text-align: left;
+  width: 35%;
+  margin-left: 80px;
+  color: white;
+  margin-top: 50px;
+}
+
+.banner-content p{
+  font-size: 1.5em;
+}
+
+.banner-content h1{
+  font-size: 3em;
+}
+
+.banner-content .btn-primary{
+  margin-top: 2em;
+}
+
+.glyphicon{
+  font-size: 35px;
+  color: #005987;
+}
+
+.col-md-4{
+  text-align: center;
+  padding: 25px;
+}
+
+.app-info{
+  margin: 50px;
+}
+
+// Tasklist Styling
+
+#notice {
+  margin-top: 30px;
+	text-align: center;
+	font-size: 1em;
+	font-weight:200;
+  color:blue;
+}
+
+.body-container {
+	width: 50%;
+	max-width: 750px;
+  background: rgba(9,69,122,1);
+	margin: 3em auto 0 auto;
+	border-radius: 7px;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	padding: 1em 0;
+}
+
+.list-title {
+	text-align: center;
+  font-weight: bold;
+	font-size: 2em;
+	text-transform: uppercase;
+	color: white;
+	margin: 0;
+	a {
+		text-decoration: none;
+		color: white;
+		&:hover {
+			opacity: 0.6;
+      text-decoration: none;
+      color: black;
+		}
+	}
+}
+
+.list-sub-title {
+	margin: 0 0 2em 0;
+	text-align: center;
+	font-size: 1em;
+	font-weight: 400;
+}
+
+
+.index {
+	padding: 2em;
+	border-bottom: 1px solid rgba(250,250,250, .3);
+	.list-sub-title {
+		margin-bottom: 0;
+	}
+}
+
+.links {
+	display: block;
+	margin: 1.5em auto 0 auto;
+	text-align: center;
+	font-size: 0.9em;
+  text-decoration: none;
+	a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+		}
+	}
+}
+
+#tasks-wrapper {
+	.row {
+		width: 100%;
+		border-top: 1px solid rgba(250,250,250, .3);
+		border-bottom: 1px solid rgba(250,250,250, .3);
+		.completed {
+			width: 10%;
+			float: left;
+			text-align: center;
+			border-right: 1px solid rgba(250,250,250, .3);
+			padding: 1em 0;
+		}
+		.task {
+			width: 70%;
+			float: left;
+			p {
+				margin: 0;
+				padding: 1em;
+				color: black;
+				font-weight: bold;
+			}
+		}
+		.delete {
+			width: 10%;
+			float: left;
+			text-align: center;
+			border-left: 1px solid rgba(200,200,200, .4);
+			padding: 1em 0;
+		}
+		i {
+			color: rgb(9,69,122);
+			&:hover {
+				color: gray;
+			}
+		}
+	}
+}
