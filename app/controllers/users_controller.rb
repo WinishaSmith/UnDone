@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # before_action: :set_current_user
   def index
     @users = User.all
   end
@@ -8,14 +7,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def set_current_user
-    # @user = @current_user
-  end
-
   def create
     @user = User.create(user_params)
     @current_user = @user
-    redirect_to root_path
+    redirect_to user_task_lists
   end
 
   def show
@@ -34,7 +29,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :email)
   end
 
 end

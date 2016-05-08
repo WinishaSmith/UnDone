@@ -1,5 +1,33 @@
-<div class="jumbotron">
-  <h1>UnDone</h1>
-  <p> The app that helps you get 'er done!"</p>
-  <p><%= link_to "Sign up now!", new_user_path, class: "btn btn-primary" %></p>
+<div class="banner">
+  <div class="banner-content" >
+    <h1>UnDone</h1>
+    <p> The app that helps you get organized, get it done, and get on with your life.</p>
+    <p><%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary" %></p>
+  </div>
+</div>
+
+<!-- How the UnDone App Works -->
+
+<div class="container app-info">
+  <div class="row">
+
+    <div class="col-md-4">
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      <h2>Sign Up</h2>
+      <p> Not a member? Create an account to get started!</p>
+    </div>
+
+    <div class="col-md-4">
+      <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+      <h2>Make a Tasklist</h2>
+      <p>Create a single list for all your tasks or categorize them using multiple lists.</p>
+    </div>
+
+    <div class="col-md-4">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      <h2>Get Stuff Done</h2>
+      <p>Easily complete or delete tasks once they're finished. Done with your entire list? You can delete lists too!</p>
+    </div>
+
+  </div>
 </div>

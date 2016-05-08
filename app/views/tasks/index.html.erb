@@ -1,6 +1,6 @@
-<h1> My Tasks </h1>
 
-<% if @current_user %>
+
+<% if current_user %>
   <% @tasks.each do |task| %>
 
   <% if task.completed? %>
@@ -23,6 +23,7 @@
       <div class='col-md-2'>
         <p><%= link_to complete_user_task_path(@user, task), method: :patch do %></p>
         <i class="fa fa-lg fa-check"></i>
+        <!-- Nice FontAwesome-ing -->
         <% end %>
       </div>
 

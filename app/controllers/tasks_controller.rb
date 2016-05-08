@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task_list
+
   def index
     @user = User.find(params[:user_id])
     @tasks = @user.tasks
@@ -11,14 +12,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @task = @user.tasks.create(task_params)
-
-    if @task.save
-      redirect_to user_tasks_path(@user)
-    else
-      render 'new'
-    end
+    @task = @task_list.tasks.create(task_params)
+    redirect_to user_task_list_url(@user, @task_list)
   end
 
   def show
@@ -31,32 +26,35 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to user_task_url
+      redirect_to user_tasks_url
     else
       render 'edit'
     end
   end
 
   def destroy
-    if @task.destroy
-      redirect_to user_tasks_url
-    end
+    @user = User.find(params[:user_id])
+    @task = @task_list.tasks.find(params[:id])
+    @task.destroy
+    redirect_to user_task_list_url(@user, @task_list), notice: 'Task was successfully deleted.'
   end
 
   def complete
-    @task = Task.find(params[:id])
+    @user = User.find(params[:user_id])
+    @task = @task_list.tasks.find(params[:id])
     @task.update_attribute(:completed_at, Time.now)
-    redirect_to user_tasks_url
+    redirect_to user_task_list_url(@user, @task_list), notice: 'Task completed.'
   end
 
   private
 
-  def find_task
-    @task = Task.find(params[:id])
+  def set_task_list
+    @user = User.find(params[:user_id])
+    @task_list = TaskList.find(params[:task_list_id])
   end
 
   def task_params
-    params.require(:task).permit(:title, :content)
+    params.require(:task).permit(:content)
   end
 
 

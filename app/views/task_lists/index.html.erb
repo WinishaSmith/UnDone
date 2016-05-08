@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<div class="body-container">
+
+
+<% @task_lists.each do |task_list| %>
+  <div class="index clearfix">
+    <h2 class="list-title"><%= link_to task_list.title, user_task_list_path(@user, task_list) %></h2>
+    <p class="list-sub-title"><%= task_list.description %></p>
+  </div>
+<% end %>
+
+<div class="links">
+  <%= link_to "Create New List", new_user_task_list_path %>
+</div>
+</div>
