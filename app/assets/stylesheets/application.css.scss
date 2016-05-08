@@ -1,32 +1,32 @@
 // Welcome page styling
-
-.navbar-custom{
-color: blue; 
-}
-
 .banner{
-  background-image: url("desktop.jpg");
-  opacity: 2;
+  background-image: url("workstation.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: table;
   width: 100%;
   min-height: 400px;
 }
-.banner-content h1{
-  text-align: center;
-  color: black;
-  margin-top: 30px;
-  font-weight: bold;
-  font-size: 3em;
+
+.banner-content{
+  text-align: left;
+  width: 35%;
+  margin-left: 80px;
+  color: white;
+  margin-top: 50px;
 }
 
 .banner-content p{
-  text-align: center;
-  color: black;
-  margin-top: 30px;
-  font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
+  // text-shadow: 2px 2px #000000;
+}
+
+.banner-content h1{
+  font-size: 3em;
+}
+
+.banner-content .btn-primary{
+  margin-top: 2em;
 }
 
 .glyphicon{
