@@ -15,22 +15,17 @@
 * Tasks will display on the index page in ascending order
 * Created the ability to edit, delete and mark complete (made with "link_to" helper)
 
-# Silver
+# Silver (Current Level)
 * Created user model with sign up and sign in functionality
 * Users can only see their tasks
 * Added navigation bar with logo and links
 * Added icons for edit, complete, and delete
 * Added 'back' and 'cancel' features for edit task and show task
-
+* Incorporated Devise gem for user authentication
+* Redesigned Welcome page to include photo
 
 # Gold (Future Additions)
 * Add due-date functionality (should alert user if task is overdue)
-* Redesign Welcome page to include photo
-* Incorporate Devise gem for user authentication
-
-
-# Unsolved Problems:
-* Users who sign up aren't identified as being signed-in so they must sign up and then sign in
 
 # User Stories:
 * Users should be presented with a home screen where they'll have the ability to sign in or sign up
